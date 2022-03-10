@@ -1,0 +1,14 @@
+.teamPage__container {
+  padding: 75px 100px;
+}
+.teamPage .ourTeam__item {
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+/* ------------------------------------------------@media (max-width:992px)------------------------------------- */
+@media (max-width: 992px) {
+  .teamPage__container {
+    padding: 30px;
+  }
+}

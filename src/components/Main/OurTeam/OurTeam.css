@@ -1,0 +1,122 @@
+.ourTeam {
+  font-weight: 500;
+}
+.ourTeam__container {
+  padding: 100px;
+}
+.ourTeam__subtitle {
+  margin: 20px 0 55px;
+  text-align: center;
+  color: #373737;
+}
+.ourTeam__content {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2%;
+  flex-wrap: wrap;
+}
+.ourTeam__item {
+  width: 31%;
+  height: 500px;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  color: #fff;
+  /* background: linear-gradient(180deg, rgba(55, 55, 55, 0) 0%, #373737 100%); */
+  background: linear-gradient(
+    0deg,
+    rgba(55, 55, 55, 0.2),
+    rgba(55, 55, 55, 0.2)
+  );
+  cursor: pointer;
+
+  /* margin-bottom: 30px; */
+}
+.ourTeam__bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.ourTeam__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ourTeam__name {
+  font-size: 24px;
+  font-weight: 700;
+}
+.ourTeam__position {
+  margin: 5px 0 15px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.ourTeam__bottomBg {
+  height: 68px;
+  width: 100%;
+  background-color: rgba(47, 58, 143, 1);
+  box-shadow: 0px 40px 70px rgba(0, 0, 0, 0.15);
+  border-radius: 61.2471px;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+
+  margin-top: 43px;
+}
+
+/* --------------------------------------------------@media (max-width: 992px) ----------------------------------- */
+@media (max-width: 992px) {
+  .ourTeam__container {
+    padding: 30px;
+  }
+  .ourTeam__subtitle {
+    margin: 20px 0 30px;
+  }
+  .ourTeam__item {
+    height: 300px;
+  }
+  .ourTeam__bottomBg {
+    height: 40px;
+  }
+}
+
+/* --------------------------------------------------@media (max-width: 768px) ----------------------------------- */
+@media (max-width: 768px) {
+  .ourTeam__item {
+    height: 200px;
+  }
+
+  .ourTeam__name {
+    font-size: 16px;
+  }
+  .ourTeam__position {
+    font-size: 14px;
+  }
+}
+
+/* --------------------------------------------------@media (max-width: 575px) ----------------------------------- */
+@media (max-width: 575px) {
+  .ourTeam__content {
+    gap: unset;
+    justify-content: space-between;
+  }
+  .ourTeam__item {
+    width: 48%;
+    height: 300px;
+    margin-bottom: 20px;
+  }
+}
+/* --------------------------------------------------@media (max-width: 575px) ----------------------------------- */
+@media (max-width: 575px) {
+  .ourTeam__item {
+    width: 100%;
+    height: 350px;
+    margin-bottom: 20px;
+  }
+}

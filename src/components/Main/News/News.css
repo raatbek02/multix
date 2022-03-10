@@ -1,0 +1,44 @@
+.news__container {
+  padding: 90px 100px 0;
+  background-image: url("../../../assets/images/main_images/statistics_images/statistics_dots.png");
+  background-repeat: no-repeat;
+  background-position: 90px 100px;
+
+  font-weight: 500;
+}
+.news__subtitle {
+  margin: 20px 0 100px;
+  text-align: center;
+  color: #373737;
+}
+.news .flex__content {
+  color: #1b67ad;
+}
+.news .flex__item {
+  margin-bottom: 0;
+}
+.news .flex__item--title {
+  color: #1b67ad;
+}
+.news .flex__item--readMore {
+  font-weight: 700;
+  color: #5e5e5e;
+}
+
+/* --------------------------------------------------@media (max-width: 992px) ----------------------------------- */
+@media (max-width: 992px) {
+  .news__container {
+    padding: 30px;
+    background-image: unset;
+  }
+  .news__subtitle {
+    margin: 20px 0 30px;
+  }
+}
+
+/* --------------------------------------------------@media (max-width: 768px) ----------------------------------- */
+@media (max-width: 768px) {
+  .news .flex__item:last-child {
+    display: none;
+  }
+}

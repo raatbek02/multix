@@ -1,0 +1,35 @@
+.ourServices {
+  background-color: #2f3a8f;
+  color: #fff;
+  font-weight: 500;
+  box-shadow: 0px 40px 70px rgba(0, 0, 0, 0.15);
+}
+.ourServices__container {
+  padding: 60px 100px;
+}
+.ourServices__title {
+  font-weight: 700;
+  font-size: 48px;
+  text-align: center;
+}
+.ourServices__subTitle {
+  text-align: center;
+  font-size: 18px;
+  margin: 20px 0 50px;
+}
+.ourServices .flex__item--description {
+  color: #ffffff;
+}
+.ourServices .flex__item--readMore {
+  color: #c4c4c4;
+}
+
+/* --------------------------------------------------@media (max-width: 992px) ----------------------------------- */
+@media (max-width: 992px) {
+  .ourServices__container {
+    padding: 30px;
+  }
+  .ourServices__subTitle {
+    margin: 20px 0 30px;
+  }
+}

@@ -1,0 +1,30 @@
+.banner_bg {
+  /* background: rgba(27, 103, 173, 0.4); */
+  width: 100%;
+  padding: 90px 0;
+  position: relative;
+
+  color: #fff;
+  background: rgba(0, 0, 0, 0.26);
+  font-weight: 700;
+}
+.banner_bg__bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.banner_bg__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner_bg__title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+}

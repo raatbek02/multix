@@ -1,0 +1,21 @@
+@font-face {
+  font-family: CeraPro;
+  src: url("./CeraPro-Medium.woff"), url("./CeraPro-Medium.woff2");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: CeraPro;
+  src: url("./CeraPro-Bold.woff"), url("./CeraPro-Bold.woff2");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: CeraPro;
+  src: url("./CeraPro-Black.woff"), url("./CeraPro-Black.woff2");
+  font-weight: 800;
+  font-display: swap;
+  font-style: normal;
+}

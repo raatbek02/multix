@@ -1,0 +1,62 @@
+.videoComponent__content {
+  display: flex;
+  align-items: center;
+}
+.videoComponent__left {
+  width: 45%;
+  padding-left: 100px;
+}
+.videoComponent__right {
+  background-image: url("../../../assets/images/main_images/videoComponent_images/blueTrapeze.png");
+  background-position-x: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 55%;
+  padding: 60px 0 50px;
+}
+.videoComponent__title {
+  font-size: 36px;
+  color: #fe7e6d;
+  font-weight: 700;
+  margin-bottom: 35px;
+}
+.videoComponent__description {
+  font-size: 18px;
+  color: #2f3a8f;
+  font-weight: 500;
+}
+
+.videoComponent__right--item {
+  max-width: 550px;
+  height: 280px;
+  background-color: rgb(71, 51, 51);
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------@media (max-width: 992px) ----------------------------------- */
+@media (max-width: 992px) {
+  .videoComponent__content {
+    flex-direction: column;
+  }
+  .videoComponent__left {
+    width: 80%;
+    padding: 20px;
+  }
+  .videoComponent__title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .videoComponent__description {
+    text-align: center;
+  }
+
+  .videoComponent__right {
+    width: 80%;
+    text-align: center;
+    background-image: unset;
+    background-color: #2f3a8f;
+    border-radius: 10px;
+    padding: 20px;
+  }
+}

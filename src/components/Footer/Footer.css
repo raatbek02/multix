@@ -1,0 +1,226 @@
+.footer {
+  position: sticky;
+  top: 100vh;
+  font-weight: 500;
+  margin-top: 170px;
+}
+.footer__form {
+  padding: 30px 0;
+  /* margin: 0 100px; */
+  background-color: #2f3a8f;
+}
+.footer__form--title {
+  font-size: 48px;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.footer__form-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.footer__form--item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.footer__form--item:last-child {
+  margin-bottom: 34px;
+}
+.footer__form--item input,
+textarea {
+  border: 1px solid #c4c4c4;
+  padding: 10px 20px;
+  color: #c4c4c4;
+}
+.footer__form--item input::placeholder,
+textarea::placeholder {
+  color: #c4c4c4;
+}
+.footer__form--item.semiInputs input {
+  width: 49%;
+}
+.footer__form--item.fullInputs input {
+  width: 100%;
+}
+.footer__form--item.fullInputs textarea {
+  width: 100%;
+  height: 155px;
+}
+
+.footer__form--subitBtn {
+  text-align: center;
+}
+.footer__form--subitBtn button {
+  padding: 10px 155px;
+  background-color: #fe7e6d;
+  font-size: 24px;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* -------------------------------------footer__middle---------------------------- */
+
+.footer__middle {
+  padding: 90px 100px;
+  color: #1b67ad;
+  font-weight: 500;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+}
+.footer__moddle--item {
+  width: 28%;
+}
+.footer__moddle--item--title {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 22px;
+}
+.footer__moddle--item--description {
+  line-height: 1.5;
+}
+.footer__moddle--item--address {
+  display: flex;
+  justify-content: center;
+}
+.footer__moddle--item--list {
+  display: flex;
+  align-items: flex-start;
+  /* justify-content: center; */
+  /* margin-bottom: 20px; */
+}
+.footer__moddle--item--img img {
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+.footer__moddle--item--address {
+}
+.footer__moddle--item--posts .footer__moddle--item--img img {
+  margin-left: 10px;
+}
+.footer__moddle--item--posts .footer__moddle--item--text {
+  margin-bottom: 20px;
+}
+
+.footer__moddle--item--address .footer__moddle--item--img img {
+  margin-right: 20px;
+}
+.footer__moddle--item--address .footer__moddle--item--text p {
+  margin-bottom: 20px;
+}
+/* ----------------------------------------------footer__bottom------------------------------------------ */
+.footer__bottom {
+  padding: 20px 100px;
+  background-color: #2f3a8f;
+  color: #fff;
+}
+.footer__bottom--top {
+  padding: 0 140px 11px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  border-bottom: 1px solid #c4c4c4;
+}
+.footer__bottom--bottom {
+  font-size: 14px;
+  text-align: center;
+}
+
+/* ------------------------------------------------@media (max-width:992px)------------------------------------- */
+@media (max-width: 992px) {
+  .footer__bottom {
+    padding: 20px 30px;
+  }
+  .footer__bottom--top {
+    padding: 0 0 11px;
+  }
+}
+/* ------------------------------------------------@media (max-width:768px)------------------------------------- */
+@media (max-width: 768px) {
+  .footer__middle {
+    padding: 20px;
+  }
+  .footer {
+    margin-top: 50px;
+  }
+}
+/* ------------------------------------------------@media (max-width:575px)------------------------------------- */
+@media (max-width: 575px) {
+  .footer__middle {
+    padding: 10px;
+  }
+  .footer__form--title {
+    font-size: 32px;
+  }
+  .footer__form {
+    padding: 30px;
+  }
+  .footer__form--item {
+    flex-direction: column;
+  }
+  .footer__form--item.semiInputs input {
+    width: 100%;
+  }
+  .footer__form--subitBtn button {
+    padding: 10px 60px;
+    font-size: 18px;
+  }
+
+  /* -------------------------------------------- */
+
+  .footer__moddle--item:first-child {
+    display: none;
+  }
+
+  .footer__moddle--item {
+    width: 48%;
+  }
+  .footer__moddle--item--title {
+    font-size: 18px;
+  }
+  .footer__moddle--item--text {
+    font-size: 12px;
+  }
+  .footer__moddle--item--address .footer__moddle--item--img img {
+    margin-right: 10px;
+  }
+  .footer__moddle--item--posts .footer__moddle--item--img img {
+    margin-left: 5px;
+  }
+
+  /* ------------------------------------------------------- */
+
+  .footer__bottom--top {
+    font-size: 12px;
+  }
+  .footer__bottom--bottom {
+    font-size: 10px;
+  }
+}
+
+/* ------------------------------------------------@media (max-width:400px)------------------------------------- */
+@media (max-width: 400px) {
+  .footer__middle {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer__moddle--item {
+    width: 70%;
+    margin-bottom: 20px;
+  }
+  .footer__moddle--item:last-child {
+    margin-bottom: 0;
+  }
+  .footer__moddle--item--text {
+    font-size: 16px;
+  }
+}
