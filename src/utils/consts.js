@@ -6,4 +6,9 @@ export const NEWSPAGE = "/newsPage";
 export const TEAMDETAIL = "/teamDetail";
 export const CONSULTANT = "/consultant";
 export const CONSULTANT_DETAIL = "/consultantDetail";
+export const NEWS_DETAIL = "/newsDetail";
+export const SERVICE_DETAIL = "/serviceDetail";
+
+
 export const CONTACTPAGE = '/contactPage'
+

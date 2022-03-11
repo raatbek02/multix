@@ -1,6 +1,7 @@
 import About from "./pages/About/About";
 import Consultant from "./pages/Consultant/Consultant";
 import ConsultantDetail from "./pages/ConsultantDetail/ConsultantDetail";
+import NewsDetail from "./pages/NewsDetail/NewsDetail";
 import ContactPage from "./pages/ContactPage/ContactPage";
 import Home from "./pages/Home";
 import NewsPage from "./pages/NewsPage/NewsPage";
@@ -14,7 +15,9 @@ import {
   CONTACTPAGE,
   HOME_ROUTES,
   NEWSPAGE,
+  NEWS_DETAIL,
   OURSERVICESPAGE,
+  SERVICE_DETAIL,
   TEAMDETAIL,
   TEAMPAGE,
 } from "./utils/consts";
@@ -29,5 +32,8 @@ export const publicRoutes = [
   { path: TEAMDETAIL + "/:id", Component: <TeamDetail /> },
   { path: CONSULTANT, Component: <Consultant /> },
   { path: CONSULTANT_DETAIL + "/:id", Component: <ConsultantDetail /> },
+  { path: NEWS_DETAIL + "/:id", Component: <NewsDetail /> },
+  { path: SERVICE_DETAIL + "/:id", Component: <null /> },
+
   { path: CONTACTPAGE, Component: <ContactPage /> },
 ];

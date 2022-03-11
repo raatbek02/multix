@@ -21,90 +21,20 @@ function OurServices() {
           We have some special crieteria that will help you
         </div>
         <div className="flex__content">
-          <div className="flex__item">
-            <div className="flex__item--img">
-              <img src={os1} alt="" />
-            </div>
-            <div className="flex__item--title">CONSULTANT COORDINATION</div>
-            <div className="flex__item--description">
-              Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum
-              copiosae argum entum has. Latine propriae quo no unum.
-            </div>
-            <div className="flex__item--readMore">
-              <span>Read More</span>
-              <img src={os_arrow} alt="" />
-            </div>
-          </div>
-          <div className="flex__item">
-            <div className="flex__item--img">
-              <img src={os2} alt="" />
-            </div>
-            <div className="flex__item--title">CONSULTANT COORDINATION</div>
-            <div className="flex__item--description">
-              Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum
-              copiosae argum entum has. Latine propriae quo no unum.
-            </div>
-            <div className="flex__item--readMore">
-              <span>Read More</span>
-              <img src={os_arrow} alt="" />
-            </div>
-          </div>
-          <div className="flex__item">
-            <div className="flex__item--img">
-              <img src={os3} alt="" />
-            </div>
-            <div className="flex__item--title">CONSULTANT COORDINATION</div>
-            <div className="flex__item--description">
-              Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum
-              copiosae argum entum has. Latine propriae quo no unum.
-            </div>
-            <div className="flex__item--readMore">
-              <span>Read More</span>
-              <img src={os_arrow} alt="" />
-            </div>
-          </div>
-          <div className="flex__item">
-            <div className="flex__item--img">
-              <img src={os3} alt="" />
-            </div>
-            <div className="flex__item--title">CONSULTANT COORDINATION</div>
-            <div className="flex__item--description">
-              Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum
-              copiosae argum entum has. Latine propriae quo no unum.
-            </div>
-            <div className="flex__item--readMore">
-              <span>Read More</span>
-              <img src={os_arrow} alt="" />
-            </div>
-          </div>
-          <div className="flex__item">
-            <div className="flex__item--img">
-              <img src={os2} alt="" />
-            </div>
-            <div className="flex__item--title">CONSULTANT COORDINATION</div>
-            <div className="flex__item--description">
-              Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum
-              copiosae argum entum has. Latine propriae quo no unum.
-            </div>
-            <div className="flex__item--readMore">
-              <span>Read More</span>
-              <img src={os_arrow} alt="" />
-            </div>
-          </div>{" "}
-          <div className="flex__item">
-            <div className="flex__item--img">
-              <img src={os1} alt="" />
-            </div>
-            <div className="flex__item--title">CONSULTANT COORDINATION</div>
-            <div className="flex__item--description">
-              Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum
-              copiosae argum entum has. Latine propriae quo no unum.
-            </div>
-            <div className="flex__item--readMore">
-              <span>Read More</span>
-              <img src={os_arrow} alt="" />
-            </div>
-          </div>
+          {serviceData &&
+            serviceData.map((el) => (
+              <div key={el.id} className="flex__item">
+                <div className="flex__item--img">
+                  <img src={el.image} alt="" />
+                </div>
+                <div className="flex__item--title">{el.title}</div>
+                <div className="flex__item--description">{el.description}</div>
+                <div className="flex__item--readMore">
+                  <span>Read More</span>
+                  <img src={os_arrow} alt="" />
+                </div>
+              </div>
+            ))}
         </div>
       </div>
     </div>

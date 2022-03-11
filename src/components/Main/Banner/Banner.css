@@ -22,31 +22,31 @@
 .banner__btns {
   text-align: center;
 }
-.banner__btns button {
+.banner__btns a button {
   padding: 10px 50px;
   font-size: 24px;
   color: #fff;
   font-weight: 700;
   transition: all 0.3s ease-in-out;
 }
-.banner__btns button:first-child {
+.banner__btns a:first-child  button {
   background-color: #fe7e6d;
   margin-right: 40px;
 }
-.banner__btns button:first-child:hover {
+.banner__btns a:first-child:hover  button {
   background-color: #ce5241;
 }
-.banner__btns button:first-child:active {
+.banner__btns a:first-child:active button {
   background-color: #8d2517;
 }
 
-.banner__btns button:last-child {
+.banner__btns a:last-child button {
   background-color: #2f3a8f;
 }
-.banner__btns button:last-child:hover {
+.banner__btns a:last-child:hover button {
   background-color: #182269;
 }
-.banner__btns button:last-child:active {
+.banner__btns a:last-child:active button {
   background-color: #010841;
 }
 
@@ -59,7 +59,7 @@
   .banner__description {
     width: 70%;
   }
-  .banner__btns button {
+  .banner__btns a button {
     padding: 8px 20px;
     font-size: 16px;
   }

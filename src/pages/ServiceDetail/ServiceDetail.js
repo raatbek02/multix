@@ -8,9 +8,9 @@ import { useParams } from "react-router-dom";
 import { $host } from "../../http";
 import { CircularProgress } from "@mui/material";
 
-function ConsultantDetail() {
+function ServiceDetail() {
   const [bgData, setBgData] = useState({});
-  const [oneConsultant, setOneConsultant] = useState({});
+  const [oneService, setOneService] = useState({});
   const [loading, setLoading] = useState(true);
 
   const getBannerBg = async () => {
@@ -21,11 +21,11 @@ function ConsultantDetail() {
 
   const { id } = useParams();
 
-  const getOneConsultant = async () => {
+  const getOneService = async () => {
     await $host
-      .get(`en/api/consultant/${id}`)
+      .get(`en/api/service/${id}`)
       .then(({ data }) => {
-        setOneConsultant(data);
+        setOneService(data);
       })
       .finally(() => {
         setLoading(false);
@@ -34,7 +34,7 @@ function ConsultantDetail() {
 
   useEffect(() => {
     getBannerBg();
-    getOneConsultant();
+    getOneService();
   }, []);
 
   React.useEffect(() => {
@@ -51,26 +51,22 @@ function ConsultantDetail() {
 
   return (
     <div className="pageDetail">
-      <Banner_bg title={"CONSULTANT COORDINATION"} bg={bgData.image} />
+      <Banner_bg title={"SERVICE"} bg={bgData.image} />
 
       <div className="pageDetail__container">
         <div className="pageDetail__content">
           <div className="pageDetail__left">
             <div className="pageDetail__left--img">
-              <img src={oneConsultant.image} alt="" />
+              <img src={oneService.image} alt="" />
             </div>
-            <div className="pageDetail__left--title">
-              {oneConsultant.title}
-            </div>
+            <div className="pageDetail__left--title">{oneService.title}</div>
             <div className="pageDetail__left--description">
-              {oneConsultant.description}
+              {oneService.description}
             </div>
           </div>
           <div className="pageDetail__right">
             <div className="pageDetail__contact">
-              <div className="pageDetail__contact--title">
-                QUICK CONTACT
-              </div>
+              <div className="pageDetail__contact--title">QUICK CONTACT</div>
               <div className="pageDetail__contact--form">
                 <p>
                   <input type={"text"} placeholder="First name" />
@@ -107,4 +103,4 @@ function ConsultantDetail() {
   );
 }
 
-export default ConsultantDetail;
+export default ServiceDetail;

@@ -49,7 +49,12 @@ textarea {
   text-align: center;
 }
 
-/* ----------------------------------------------------------------- */
+.loading--block {
+  text-align: center;
+  margin: 200px 0;
+}
+
+/* --------------------------    FLEX__CONTENT    --------------------------------------- */
 .flex__content {
   display: flex;
   justify-content: flex-start;
@@ -100,10 +105,105 @@ textarea {
   margin-right: 7px;
 }
 /* ---------------------------------------------------------------------- */
-.loading--block {
-  text-align: center;
-  margin: 200px 0;
+
+/* --------------------------------    pageDetail__container     -------------------------------------------- */
+.pageDetail__container {
+  padding: 35px 100px 90px;
+  font-weight: 500;
 }
+.pageDetail__content {
+  display: flex;
+}
+.pageDetail__left {
+  width: 65%;
+}
+.pageDetail__right {
+  width: 35%;
+  padding-left: 20px;
+}
+.pageDetail__left--img {
+  width: 100%;
+}
+.pageDetail__left--img img {
+  width: 100%;
+}
+
+.pageDetail__left--title {
+  color: #fe7e6d;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 50px 0 20px;
+}
+.pageDetail__left--description {
+  font-size: 18px;
+  color: #2f3a8f;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.pageDetail__contact {
+  width: 100%;
+  padding: 20px 0 35px;
+  /* display: flex; */
+  /* flex-direction: column;
+  align-items: center; */
+  background-color: #2f3a8f;
+}
+.pageDetail__contact--title {
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 24px;
+}
+.pageDetail__contact--form {
+  width: 70%;
+  margin: 31px auto 0;
+}
+.pageDetail__contact--form p input {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #c4c4c4;
+  margin-bottom: 11px;
+  color: #c4c4c4;
+}
+.pageDetail__contact--form p input::placeholder {
+  color: #c4c4c4;
+}
+.pageDetail__contact--form p textarea {
+  width: 100%;
+  height: 80px;
+}
+.pageDetail__contact--btn {
+  text-align: center;
+  margin-top: 48px;
+}
+.pageDetail__contact--btn button {
+  padding: 7px 85px;
+  background: #fe7e6d;
+  color: #fff;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+.pageDetail__contact--btn button:hover {
+  background: #aa3e30;
+}
+.pageDetail__contact--btn button:active {
+  background: #db7e71;
+}
+.pageDetail__right--dots {
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.pageDetail__right--dot2 {
+  margin-top: 50px;
+  margin-right: 70px;
+}
+.pageDetail__right--dots img {
+  display: block;
+  max-width: 140px;
+}
+/* -------------------------------------------------------------------------------------------------------? */
 
 /* ------------------------------------------------@media (max-width:992px)------------------------------------- */
 @media (max-width: 992px) {

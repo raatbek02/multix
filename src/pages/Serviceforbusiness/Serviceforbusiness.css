@@ -37,6 +37,13 @@
   font-size: 24px;
   color: #fff;
   font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+.serviceforbusiness__btn button:hover {
+  background-color: #a83f32;
+}
+.serviceforbusiness__btn button:active {
+  background-color: #440e07;
 }
 
 /* ------------------------------------------------@media (max-width:768px)------------------------------------- */

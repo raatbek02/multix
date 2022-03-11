@@ -58,6 +58,8 @@ function Header() {
     },
   ];
 
+
+  
   // document.body.style.overflow = activeMobileMenu ? "hidden " : "auto ";
   let root = document.getElementById("root");
   root.style.overflowY = activeMobileMenu ? "hidden " : "auto ";
@@ -79,10 +81,10 @@ function Header() {
                 <img src={phone} alt="" />
                 <span>+996 555 555 555</span>
               </div>
-              <div className="header__right--top--item">
+              {/* <div className="header__right--top--item">
                 <span>En</span>
                 <img src={right_arrow} alt="" />
-              </div>
+              </div> */}
             </div>
             <div className="header__right--bottom">
               <div className="header__menu">
@@ -159,10 +161,10 @@ function Header() {
                 <img src={phone} alt="" />
                 <span>+996 555 555 555</span>
               </div>
-              <div className="header__right--top--item">
+              {/* <div className="header__right--top--item">
                 <span>En</span>
                 <img src={right_arrow} alt="" />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

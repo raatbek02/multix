@@ -1,9 +1,11 @@
 import { CircularProgress } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import os1 from "../../assets/images/main_images/ourServices_images/os1.png";
 import os_arrow from "../../assets/images/main_images/ourServices_images/os_arrow.svg";
 import { $host } from "../../http";
+import { SERVICE_DETAIL } from "../../utils/consts";
 
 import Banner_bg from "../Banner_bg/Banner_bg";
 import Serviceforbusiness from "../Serviceforbusiness/Serviceforbusiness";
@@ -12,6 +14,8 @@ import "./OurServicesPage.css";
 function OurServicesPage() {
   const [bgData, setBgData] = useState({});
   const [loading, setLoading] = useState(true);
+
+  const navigate = useNavigate();
 
   const serviceData = useSelector((s) => s.service_store.serviceData);
 
@@ -28,6 +32,10 @@ function OurServicesPage() {
 
   useEffect(() => {
     getBannerBg();
+  }, []);
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
   }, []);
 
   if (loading) {
@@ -48,14 +56,14 @@ function OurServicesPage() {
             serviceData.map((el) => (
               <div className="flex__item">
                 <div className="flex__item--img">
-                  <img src={os1} alt="" />
+                  <img src={el.image} alt="" />
                 </div>
-                <div className="flex__item--title">CONSULTANT COORDINATION</div>
-                <div className="flex__item--description">
-                  Lorem ipsum dolor sit amet, an labores explicari qui, eu
-                  nostrum copiosae argum entum has. Latine propriae quo no unum.
-                </div>
-                <div className="flex__item--readMore">
+                <div className="flex__item--title">{el.title}</div>
+                <div className="flex__item--description">{el.description}</div>
+                <div
+                  onClick={() => navigate(`${SERVICE_DETAIL}/${el.id}`)}
+                  className="flex__item--readMore"
+                >
                   <span>Read More</span>
                   <img src={os_arrow} alt="" />
                 </div>

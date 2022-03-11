@@ -6,31 +6,43 @@ import "./NewsPage.css";
 import Serviceforbusiness from "../Serviceforbusiness/Serviceforbusiness";
 import { $host } from "../../http";
 import { CircularProgress } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import { NEWS_DETAIL } from "../../utils/consts";
+import { useSelector } from "react-redux";
 
 function NewsPage() {
   const [bgData, setBgData] = useState({});
-  const [newsData, setNewsData] = useState([]);
+  //   const [newsData, setNewsData] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const getBannerBg = async () => {
-    await $host.get(`en/api/background-news/`).then(({ data }) => {
-      setBgData(data[0]);
-    });
-  };
+  const navigate = useNavigate();
 
-  const getNewsData = async () => {
+  const newsData = useSelector((s) => s.news_store.newsData);
+
+  const getBannerBg = async () => {
     await $host
-      .get(`en/api/news/`)
+      .get(`en/api/background-news/`)
       .then(({ data }) => {
-        setNewsData(data);
+        setBgData(data[0]);
       })
       .finally(() => {
         setLoading(false);
       });
   };
+
+  //   const getNewsData = async () => {
+  //     await $host
+  //       .get(`en/api/news/`)
+  //       .then(({ data }) => {
+  //         setNewsData(data);
+  //       })
+  //       .finally(() => {
+  //         setLoading(false);
+  //       });
+  //   };
   useEffect(() => {
     getBannerBg();
-    getNewsData();
+    //  getNewsData();
   }, []);
 
   if (loading) {
@@ -55,7 +67,10 @@ function NewsPage() {
                 </div>
                 <div className="flex__item--title">{el.title}</div>
                 <div className="flex__item--description">{el.description}</div>
-                <div className="flex__item--readMore">
+                <div
+                  onClick={() => navigate(`${NEWS_DETAIL}/${el.id}`)}
+                  className="flex__item--readMore"
+                >
                   <span>Read More</span>
                   <img src={os_arrow} alt="" />
                 </div>

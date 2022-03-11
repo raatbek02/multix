@@ -26,7 +26,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer__container">
-        <div className="footer__form">
+        <div className="footer__form" id="footer__form">
           <div className="footer__form--title">BOOKING FORM</div>
           <div className="footer__form-content">
             <div className="footer__form--item semiInputs">
