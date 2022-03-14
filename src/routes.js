@@ -17,10 +17,13 @@ import {
   NEWSPAGE,
   NEWS_DETAIL,
   OURSERVICESPAGE,
+  SEARCH_ROUTE,
   SERVICE_DETAIL,
   TEAMDETAIL,
   TEAMPAGE,
 } from "./utils/consts";
+import ServiceDetail from "./pages/ServiceDetail/ServiceDetail";
+import Search from "./pages/Search/Search";
 
 export const publicRoutes = [
   { path: HOME_ROUTES, Component: <Home /> },
@@ -33,7 +36,8 @@ export const publicRoutes = [
   { path: CONSULTANT, Component: <Consultant /> },
   { path: CONSULTANT_DETAIL + "/:id", Component: <ConsultantDetail /> },
   { path: NEWS_DETAIL + "/:id", Component: <NewsDetail /> },
-  { path: SERVICE_DETAIL + "/:id", Component: <null /> },
+  { path: SERVICE_DETAIL + "/:id", Component: <ServiceDetail /> },
+  { path: SEARCH_ROUTE, Component: <Search /> },
 
   { path: CONTACTPAGE, Component: <ContactPage /> },
 ];

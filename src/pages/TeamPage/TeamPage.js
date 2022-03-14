@@ -9,6 +9,7 @@ import "./TeamPage.css";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { TEAMDETAIL } from "../../utils/consts";
+import { Zoom } from "react-reveal";
 
 function TeamPage() {
   const [bgData, setBgData] = useState({});
@@ -59,17 +60,19 @@ function TeamPage() {
         <div className="ourTeam__content">
           {teamData &&
             teamData.map((el) => (
-              <div
-                key={el.id}
-                className="ourTeam__item"
-                onClick={() => navigate(`${TEAMDETAIL}/${el.id}`)}
-              >
-                <div className="ourTeam__name">{el.title}</div>
-                <div className="ourTeam__position">{el.position}</div>
-                <div className="ourTeam__bg">
-                  <img src={el.image} alt="" />
+              <Zoom cascade>
+                <div
+                  key={el.id}
+                  className="ourTeam__item"
+                  onClick={() => navigate(`${TEAMDETAIL}/${el.id}`)}
+                >
+                  <div className="ourTeam__name">{el.title}</div>
+                  <div className="ourTeam__position">{el.position}</div>
+                  <div className="ourTeam__bg">
+                    <img src={el.image} alt="" />
+                  </div>
                 </div>
-              </div>
+              </Zoom>
             ))}
         </div>
       </div>

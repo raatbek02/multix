@@ -13,6 +13,8 @@ function ServiceDetail() {
   const [oneService, setOneService] = useState({});
   const [loading, setLoading] = useState(true);
 
+  console.log("oneService", oneService);
+
   const getBannerBg = async () => {
     await $host.get(`en/api/background-consultant/`).then(({ data }) => {
       setBgData(data[0]);

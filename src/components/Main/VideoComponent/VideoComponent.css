@@ -29,7 +29,7 @@
 .videoComponent__right--item {
   max-width: 550px;
   height: 280px;
-  background-color: rgb(71, 51, 51);
+  /* background-color: rgb(71, 51, 51); */
   margin: 0 auto;
 }
 

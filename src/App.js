@@ -1,10 +1,12 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import "./App.css";
 import AppRouter from "./components/AppRouter";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import Main from "./components/Main/Main";
 import { $host } from "./http";
 import { setNewsData } from "./store/news_store";
 import { setServiceData } from "./store/service_store";
@@ -34,6 +36,7 @@ function App() {
       <Header />
       <AppRouter />
       <Footer />
+      <ToastContainer position="top-right" />
     </div>
   );
 }

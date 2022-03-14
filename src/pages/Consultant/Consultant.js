@@ -8,6 +8,7 @@ import os_arrow from "../../assets/images/main_images/ourServices_images/os_arro
 import Serviceforbusiness from "../Serviceforbusiness/Serviceforbusiness";
 import "./Consultant.css";
 import { CONSULTANT_DETAIL } from "../../utils/consts";
+import { Zoom } from "react-reveal";
 
 function Consultant() {
   const [bgData, setBgData] = useState({});
@@ -53,21 +54,25 @@ function Consultant() {
         <div className="flex__content">
           {consultantData &&
             consultantData.map((el) => (
-              <div
-                key={el.id}
-                className="flex__item"
-                onClick={() => navigate(`${CONSULTANT_DETAIL}/${el.id}`)}
-              >
-                <div className="flex__item--img">
-                  <img src={el.image} alt="" />
+              <Zoom cascade>
+                <div
+                  key={el.id}
+                  className="flex__item"
+                  onClick={() => navigate(`${CONSULTANT_DETAIL}/${el.id}`)}
+                >
+                  <div className="flex__item--img">
+                    <img src={el.image} alt="" />
+                  </div>
+                  <div className="flex__item--title">{el.title}</div>
+                  <div className="flex__item--description">
+                    {el.description}
+                  </div>
+                  <div className="flex__item--readMore">
+                    <span>Read More</span>
+                    <img src={os_arrow} alt="" />
+                  </div>
                 </div>
-                <div className="flex__item--title">{el.title}</div>
-                <div className="flex__item--description">{el.description}</div>
-                <div className="flex__item--readMore">
-                  <span>Read More</span>
-                  <img src={os_arrow} alt="" />
-                </div>
-              </div>
+              </Zoom>
             ))}
         </div>
       </div>

@@ -53,7 +53,9 @@ textarea {
   text-align: center;
   margin: 200px 0;
 }
-
+.scrollingContent > div {
+  height: unset;
+}
 /* --------------------------    FLEX__CONTENT    --------------------------------------- */
 .flex__content {
   display: flex;

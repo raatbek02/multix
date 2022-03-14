@@ -9,6 +9,7 @@ import { CircularProgress } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { NEWS_DETAIL } from "../../utils/consts";
 import { useSelector } from "react-redux";
+import { Zoom } from "react-reveal";
 
 function NewsPage() {
   const [bgData, setBgData] = useState({});
@@ -61,20 +62,24 @@ function NewsPage() {
         <div className="flex__content">
           {newsData &&
             newsData.map((el) => (
-              <div key={el.id} className="flex__item">
-                <div className="flex__item--img">
-                  <img src={el.image} alt="" />
+              <Zoom cascade>
+                <div key={el.id} className="flex__item">
+                  <div className="flex__item--img">
+                    <img src={el.image} alt="" />
+                  </div>
+                  <div className="flex__item--title">{el.title}</div>
+                  <div className="flex__item--description">
+                    {el.description}
+                  </div>
+                  <div
+                    onClick={() => navigate(`${NEWS_DETAIL}/${el.id}`)}
+                    className="flex__item--readMore"
+                  >
+                    <span>Read More</span>
+                    <img src={os_arrow} alt="" />
+                  </div>
                 </div>
-                <div className="flex__item--title">{el.title}</div>
-                <div className="flex__item--description">{el.description}</div>
-                <div
-                  onClick={() => navigate(`${NEWS_DETAIL}/${el.id}`)}
-                  className="flex__item--readMore"
-                >
-                  <span>Read More</span>
-                  <img src={os_arrow} alt="" />
-                </div>
-              </div>
+              </Zoom>
             ))}
         </div>
       </div>

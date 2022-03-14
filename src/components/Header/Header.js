@@ -1,8 +1,11 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { $host } from "../../http";
+
+import { useDispatch } from "react-redux";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import email from "../../assets/images/header_images/email.svg";
 import phone from "../../assets/images/header_images/phone.svg";
-import right_arrow from "../../assets/images/header_images/right_arrow.svg";
+import { addSearchItems } from "../../store/search_store";
 import {
   ABOUT,
   CONSULTANT,
@@ -10,6 +13,7 @@ import {
   HOME_ROUTES,
   NEWSPAGE,
   OURSERVICESPAGE,
+  SEARCH_ROUTE,
   TEAMPAGE,
 } from "../../utils/consts";
 
@@ -18,7 +22,10 @@ import "./Header.css";
 function Header() {
   const [activeMobileMenu, setActiveMobileMenu] = useState(false);
   const [activeLink, setActiveLink] = useState(1);
-  console.log(activeLink);
+  const [search, setSearch] = useState("");
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const menuList = [
     {
@@ -58,24 +65,40 @@ function Header() {
     },
   ];
 
-
-  
   // document.body.style.overflow = activeMobileMenu ? "hidden " : "auto ";
   let root = document.getElementById("root");
   root.style.overflowY = activeMobileMenu ? "hidden " : "auto ";
+
+  const searchHandler = async (e) => {
+    if (search && e.key === "Enter") {
+      await $host.get(`en/api/news/?search=${search}`).then(({ data }) => {
+        dispatch(addSearchItems(data));
+        setSearch("");
+        navigate(SEARCH_ROUTE);
+      });
+    }
+  };
+
+  const searchHandler_2 = async () => {
+    await $host.get(`en/api/news/?search=${search}`).then(({ data }) => {
+      dispatch(addSearchItems(data.results));
+      setSearch("");
+      navigate(SEARCH_ROUTE);
+    });
+  };
 
   return (
     <header className="header">
       <div className="header__container">
         <div className="header__content desktop">
           <div className="header__left">
-            <h1 className="header__title">Multix</h1>
+            <h1 className="header__title">Bizuba</h1>
           </div>
           <div className="header__right">
             <div className="header__right--top">
               <div className="header__right--top--item">
                 <img src={email} alt="" />
-                <span>infomultix@gmail.com</span>
+                <span>infobizuba@gmail.com</span>
               </div>
               <div className="header__right--top--item">
                 <img src={phone} alt="" />
@@ -103,7 +126,12 @@ function Header() {
                 </ul>
               </div>
               <div className="header__search">
-                <input type={"text"} />
+                <input
+                  type={"text"}
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  onKeyDown={(e) => searchHandler(e)}
+                />
                 <img src="https://akfa.kg/static/media/lupa.fb555f47.svg" />
               </div>
             </div>

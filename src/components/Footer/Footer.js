@@ -1,8 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import address_1 from "../../assets/images/footer_images/address_1.png";
-import address_2 from "../../assets/images/footer_images/address_2.png";
-import address_3 from "../../assets/images/footer_images/address_3.png";
+import { toast } from "react-toastify";
 import arrow from "../../assets/images/footer_images/arrow.png";
 import { $host } from "../../http";
 import { setContactData } from "../../store/contact_store";
@@ -12,6 +10,52 @@ import "./Footer.css";
 function Footer() {
   const dispatch = useDispatch();
   const contactData = useSelector((s) => s.contact_store.contactData);
+  const [backCallInput, setBackCallInput] = useState({
+    name: "",
+    last_name: "",
+    phone: "",
+    email: "",
+    theme: "",
+    description: "",
+  });
+
+  const successSubmited = () => toast.success("Callback sent successfully!");
+
+  const handleInput = (e) => {
+    setBackCallInput({ ...backCallInput, [e.target.name]: e.target.value });
+  };
+
+  const submitBackCall = async (e) => {
+    e.preventDefault();
+
+    const data = {
+      name: backCallInput.name,
+      last_name: backCallInput.last_name,
+      phone: backCallInput.phone,
+      email: backCallInput.email,
+      theme: backCallInput.theme,
+      description: backCallInput.description,
+    };
+
+    $host
+      .post(`en/api/backcall`, data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => {
+        setBackCallInput({
+          name: "",
+          last_name: "",
+          phone: "",
+          email: "",
+          theme: "",
+          description: "",
+        });
+
+        successSubmited();
+      });
+  };
 
   const getContact = async () => {
     await $host.get(`en/api/contact_data/`).then(({ data }) => {
@@ -30,22 +74,57 @@ function Footer() {
           <div className="footer__form--title">BOOKING FORM</div>
           <div className="footer__form-content">
             <div className="footer__form--item semiInputs">
-              <input type={"text"} placeholder="First name" />
-              <input type={"text"} placeholder="Last name" />
+              <input
+                type={"text"}
+                placeholder="First name"
+                onChange={handleInput}
+                name="name"
+                value={backCallInput.name}
+              />
+              <input
+                type={"text"}
+                placeholder="Last name"
+                onChange={handleInput}
+                name="last_name"
+                value={backCallInput.last_name}
+              />
             </div>
             <div className="footer__form--item semiInputs">
-              <input type={"text"} placeholder="Phone number" />
-              <input type={"text"} placeholder="Email Address" />
+              <input
+                type={"text"}
+                placeholder="Phone number"
+                onChange={handleInput}
+                name="phone"
+                value={backCallInput.phone}
+              />
+              <input
+                type={"text"}
+                placeholder="Email Address"
+                onChange={handleInput}
+                name="email"
+                value={backCallInput.email}
+              />
             </div>
             <div className="footer__form--item fullInputs">
-              <input type={"text"} placeholder="Subject" />
+              <input
+                type={"text"}
+                placeholder="Subject"
+                onChange={handleInput}
+                name="theme"
+                value={backCallInput.theme}
+              />
             </div>
             <div className="footer__form--item fullInputs">
-              <textarea placeholder="Message" />
+              <textarea
+                placeholder="Message"
+                onChange={handleInput}
+                name="description"
+                value={backCallInput.description}
+              />
             </div>
 
             <div className="footer__form--subitBtn">
-              <button>SUBMIT</button>
+              <button onClick={(e) => submitBackCall(e)}>SUBMIT</button>
             </div>
           </div>
         </div>

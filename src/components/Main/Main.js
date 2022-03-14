@@ -1,10 +1,6 @@
 import { CircularProgress } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { $host } from "../../http/index";
-import { setNewsData } from "../../store/news_store";
-import { setServiceData } from "../../store/service_store";
-import { setTeamData } from "../../store/team_store";
+
 import Banner from "./Banner/Banner";
 import Choose from "./Choose/Choose";
 import News from "./News/News";
@@ -38,7 +34,7 @@ function Main() {
       <OurServices />
       <OurTeam />
       <SecondStatistics />
-      <News />
+      <News />;
     </div>
   );
 }
