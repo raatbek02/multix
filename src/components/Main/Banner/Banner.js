@@ -12,11 +12,11 @@ function Banner() {
     <div className="banner">
       <div className="banner__container">
         <div className="title__white">
-          <Fade duration={2000}>WE WORK FOR YOUR SUCCESS IN REAL</Fade>
+          <Fade duration={1900}>WE WORK FOR YOUR SUCCESS IN REAL</Fade>
         </div>
 
         <div className="banner__description">
-          <Fade duration={2000}>
+          <Fade duration={1900}>
             “Successful people are not gifted they just work hard, then succeed
             on purpose.”
           </Fade>
