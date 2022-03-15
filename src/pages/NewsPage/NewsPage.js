@@ -46,6 +46,10 @@ function NewsPage() {
     //  getNewsData();
   }, []);
 
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   if (loading) {
     return (
       <div className="loading--block">
