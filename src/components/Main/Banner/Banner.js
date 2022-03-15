@@ -36,12 +36,12 @@ function Banner() {
             ignoreCancelEvents={false}
             spyThrottle={500}
           >
-            <Flash duration={2000}>
+            <Flash duration={1800}>
               <button>Contact Us</button>
             </Flash>
           </LinkScroll>
           <Link to={ABOUT}>
-            <Flash duration={2000}>
+            <Flash duration={1800}>
               <button>Read more</button>
             </Flash>
           </Link>
