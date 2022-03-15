@@ -7,6 +7,8 @@ import Serviceforbusiness from "../Serviceforbusiness/Serviceforbusiness";
 import { useParams } from "react-router-dom";
 import { $host } from "../../http";
 import { CircularProgress } from "@mui/material";
+import QuickContact from "../QuickContact/QuickContact";
+import '../../pageDetail/pageDetail.css'
 
 function ConsultantDetail() {
   const [bgData, setBgData] = useState({});
@@ -59,37 +61,13 @@ function ConsultantDetail() {
             <div className="pageDetail__left--img">
               <img src={oneConsultant.image} alt="" />
             </div>
-            <div className="pageDetail__left--title">
-              {oneConsultant.title}
-            </div>
+            <div className="pageDetail__left--title">{oneConsultant.title}</div>
             <div className="pageDetail__left--description">
               {oneConsultant.description}
             </div>
           </div>
           <div className="pageDetail__right">
-            <div className="pageDetail__contact">
-              <div className="pageDetail__contact--title">
-                QUICK CONTACT
-              </div>
-              <div className="pageDetail__contact--form">
-                <p>
-                  <input type={"text"} placeholder="First name" />
-                </p>
-                <p>
-                  <input type={"text"} placeholder="Phone number" />
-                </p>
-                <p>
-                  <input type={"text"} placeholder="Email Address" />
-                </p>
-                <p>
-                  <textarea type={"text"} placeholder="Message" />
-                </p>
-
-                <div className="pageDetail__contact--btn">
-                  <button>SUBMIT</button>
-                </div>
-              </div>
-            </div>
+            <QuickContact />
             <div className="pageDetail__right--dots">
               <div className="pageDetail__right--dot1">
                 <img src={dots} alt="" />

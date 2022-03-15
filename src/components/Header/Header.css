@@ -10,6 +10,8 @@
   background-color: #fff;
 }
 .header__container {
+  max-width: 1440px;
+  margin: 0 auto;
   padding-bottom: 20px;
 }
 .header__content {
