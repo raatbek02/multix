@@ -12,16 +12,14 @@ function Banner() {
     <div className="banner">
       <div className="banner__container">
         <div className="title__white">
-          <Bounce right cascade duration={2000}>
-            WE WORK FOR YOUR SUCCESS IN REAL
-          </Bounce>
+          <Fade duration={2000}>WE WORK FOR YOUR SUCCESS IN REAL</Fade>
         </div>
 
         <div className="banner__description">
-          <Bounce left cascade duration={2000}>
+          <Fade duration={2000}>
             “Successful people are not gifted they just work hard, then succeed
             on purpose.”
-          </Bounce>
+          </Fade>
         </div>
 
         <div className="banner__btns">
