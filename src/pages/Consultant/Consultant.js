@@ -9,13 +9,16 @@ import Serviceforbusiness from "../Serviceforbusiness/Serviceforbusiness";
 import "./Consultant.css";
 import { CONSULTANT_DETAIL } from "../../utils/consts";
 import { Zoom } from "react-reveal";
+import { useDispatch, useSelector } from "react-redux";
+import { setConsultantData } from "../../store/consultant_store";
 
 function Consultant() {
   const [bgData, setBgData] = useState({});
-  const [consultantData, setConsultantData] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const consultantData = useSelector((s) => s.consultant_store.consultantData);
 
   const getBannerBg = async () => {
     await $host.get(`en/api/background-consultant/`).then(({ data }) => {
@@ -27,7 +30,7 @@ function Consultant() {
     await $host
       .get(`en/api/consultant/`)
       .then(({ data }) => {
-        setConsultantData(data);
+        dispatch(setConsultantData(data));
       })
       .finally(() => {
         setLoading(false);

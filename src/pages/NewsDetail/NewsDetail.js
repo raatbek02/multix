@@ -9,6 +9,7 @@ import { $host } from "../../http";
 import { CircularProgress } from "@mui/material";
 import QuickContact from "../QuickContact/QuickContact";
 import "../../pageDetail/pageDetail.css";
+import './NewsDetail.css'
 
 function NewsDetail() {
   const [bgData, setBgData] = useState({});

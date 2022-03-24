@@ -10,6 +10,14 @@ import TeamDetail from "./pages/TeamDetail/TeamDetail";
 import TeamPage from "./pages/TeamPage/TeamPage";
 import {
   ABOUT,
+  ADMIN,
+  ADMIN_ABOUT,
+  ADMIN_CONSULTANT,
+  ADMIN_CONTACT,
+  ADMIN_INFO,
+  ADMIN_NEWS,
+  ADMIN_SERVICE,
+  ADMIN_TEAM,
   CONSULTANT,
   CONSULTANT_DETAIL,
   CONTACTPAGE,
@@ -24,6 +32,14 @@ import {
 } from "./utils/consts";
 import ServiceDetail from "./pages/ServiceDetail/ServiceDetail";
 import Search from "./pages/Search/Search";
+import Admin from "./pages/Admin/Admin";
+import AdminTeam from "./pages/Admin/AdminTeam/AdminTeam";
+import AdminNews from "./pages/Admin/AdminNews/AdminNews";
+import AdminConsultant from "./pages/Admin/AdminConsultant/AdminConsultant";
+import AdminContact from "./pages/Admin/AdminContact/AdminContact";
+import AdminAbout from "./pages/Admin/AdminAbout/AdminAbout";
+import AdminService from "./pages/Admin/AdminService/AdminService";
+import AdminInfo from "./pages/Admin/AdminInfo/AdminInfo";
 
 export const publicRoutes = [
   { path: HOME_ROUTES, Component: <Home /> },
@@ -40,4 +56,42 @@ export const publicRoutes = [
   { path: SEARCH_ROUTE, Component: <Search /> },
 
   { path: CONTACTPAGE, Component: <ContactPage /> },
+];
+
+// export const privateRoutes = [
+//   {
+//     path: ADMIN,
+//     Component: <Admin />,
+//   },
+// ];
+
+export const adminRoutes = [
+  {
+    path: ADMIN_TEAM,
+    Component: <AdminTeam />,
+  },
+  {
+    path: ADMIN_NEWS,
+    Component: <AdminNews />,
+  },
+  {
+    path: ADMIN_CONSULTANT,
+    Component: <AdminConsultant />,
+  },
+  {
+    path: ADMIN_SERVICE,
+    Component: <AdminService />,
+  },
+  {
+    path: ADMIN_ABOUT,
+    Component: <AdminAbout />,
+  },
+  {
+    path: ADMIN_CONTACT,
+    Component: <AdminContact />,
+  },
+  {
+    path: ADMIN_INFO,
+    Component: <AdminInfo />,
+  },
 ];

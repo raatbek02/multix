@@ -16,6 +16,17 @@ a {
   text-decoration: none;
   color: unset;
 }
+input,
+textarea {
+  border-style: none;
+  background-color: transparent;
+}
+table {
+  width: 100%;
+}
+table {
+  border-collapse: collapse;
+}
 
 .App {
   max-width: 1440px;
@@ -28,11 +39,6 @@ a {
 
   font-family: CeraPro;
   /* font-weight: 500; */
-}
-input,
-textarea {
-  border-style: none;
-  background-color: transparent;
 }
 
 .title__blue {

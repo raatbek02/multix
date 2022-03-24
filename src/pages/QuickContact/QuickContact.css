@@ -1,0 +1,10 @@
+/* -----------------------------------------------------------MEDIA------------------------------------ */
+
+@media (max-width: 575px) {
+  .pageDetail__contact--title {
+    font-size: 18px;
+  }
+  .pageDetail__contact--form {
+    width: 90%;
+  }
+}

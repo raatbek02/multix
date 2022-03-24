@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { $host } from "../../http";
 
 import { useDispatch } from "react-redux";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import email from "../../assets/images/header_images/email.svg";
 import phone from "../../assets/images/header_images/phone.svg";
 import { addSearchItems } from "../../store/search_store";
@@ -26,6 +26,7 @@ function Header() {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const menuList = [
     {
@@ -88,11 +89,16 @@ function Header() {
   };
 
   return (
-    <header className="header">
+    <header
+      // className={location.pathname === "/admin" ? "header__hiden" : "header"}
+      className="header"
+    >
       <div className="header__container">
         <div className="header__content desktop">
           <div className="header__left">
-            <h1 className="header__title">Bizuba</h1>
+            <h1 className="header__title" onClick={() => navigate(HOME_ROUTES)}>
+              Bizuba
+            </h1>
           </div>
           <div className="header__right">
             <div className="header__right--top">
@@ -141,7 +147,12 @@ function Header() {
         <div className="header__content mobile">
           <p>
             <div className="header__mobile--item">
-              <h1 className="header__title">Multix</h1>
+              <h1
+                className="header__title"
+                onClick={() => navigate(HOME_ROUTES)}
+              >
+                Bizuba
+              </h1>
             </div>
             <div className="header__mobile--item">
               <div className="header__search">
@@ -173,7 +184,12 @@ function Header() {
             <div className="header__menu">
               <ul>
                 {menuList.map((el) => (
-                  <li key={el.id}>
+                  <li
+                    key={el.id}
+                    onClick={() => {
+                      setActiveMobileMenu(false);
+                    }}
+                  >
                     <NavLink to={el.path}>{el.title}</NavLink>
                   </li>
                 ))}

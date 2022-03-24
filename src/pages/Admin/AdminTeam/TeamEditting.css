@@ -1,0 +1,97 @@
+.teamEditting {
+  width: 700px;
+  font-weight: 500;
+}
+.teamEditting__container {
+  /* padding: 30px; */
+}
+.teamEditting__header {
+  padding: 20px;
+  background-color: rgb(236, 165, 10);
+  margin-bottom: 20px;
+  font-weight: 700;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.teamEditting__header h2 {
+  color: #fff;
+  font-size: 36px;
+}
+
+.teamEditting__btns button {
+  padding: 8px 20px;
+  color: darkslategray;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+.teamEditting__btns button:first-child {
+  background-color: aqua;
+  margin-right: 15px;
+}
+.teamEditting__btns button:first-child:hover {
+  background-color: rgb(0, 172, 172);
+}
+.teamEditting__btns button:first-child:active {
+  background-color: rgb(114, 231, 231);
+}
+
+.teamEditting__btns button:last-child {
+  background-color: firebrick;
+  color: aliceblue;
+}
+.teamEditting__btns button:last-child:hover {
+  background-color: rgb(136, 8, 8);
+}
+.teamEditting__btns button:last-child:active {
+  background-color: rgb(224, 61, 61);
+}
+
+.teamEditting__content {
+  padding: 0 20px;
+}
+.teamEditting__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+.teamEditting__item:last-child {
+  align-items: flex-start;
+}
+.teamEditting__item--left {
+  width: 48%;
+}
+.teamEditting__item--right {
+  width: 48%;
+}
+.teamEditting__item--input,
+.teamEditting__item textarea {
+  display: block;
+  border: 1px solid #949292;
+  width: 90%;
+  padding: 8px 10px;
+  margin-top: 10px;
+}
+.teamEditting__item textarea {
+  height: 80px;
+}
+.teamEditting__item textarea::placeholder {
+  font-size: 16px;
+  color: darkslategrey;
+}
+.teamEditting__item--input::placeholder {
+  font-size: 16px;
+  color: darkslategrey;
+}
+
+/* .teamEditting__item.imageFile input {
+  display: unset;
+  border: unset;
+  width: unset;
+  padding: unset;
+  margin-top: unset;
+} */

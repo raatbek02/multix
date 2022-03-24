@@ -1,0 +1,44 @@
+.adminSidebar {
+  padding: 30px;
+  height: 100%;
+  /* background-color: #2f3a8f; */
+}
+.adminSidebar h1 {
+  font-size: 36px;
+  color: #ffc600;
+  font-weight: 900;
+  margin-bottom: 50px;
+}
+.adminSidebar__list--items {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+
+  cursor: pointer;
+}
+.adminSidebar__list--items:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+.adminSidebar__list--items:active {
+  background: rgba(255, 255, 255, 0.7);
+
+}
+.adminSidebar__logos {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  margin-right: 20px;
+}
+.adminSidebar__logos img {
+  width: 60%;
+}

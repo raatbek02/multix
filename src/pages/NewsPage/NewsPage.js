@@ -6,7 +6,7 @@ import "./NewsPage.css";
 import Serviceforbusiness from "../Serviceforbusiness/Serviceforbusiness";
 import { $host } from "../../http";
 import { CircularProgress } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { NEWS_DETAIL } from "../../utils/consts";
 import { useSelector } from "react-redux";
 import { Zoom } from "react-reveal";
@@ -17,6 +17,8 @@ function NewsPage() {
   const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
+  const location = useLocation();
+  console.log("location", location);
 
   const newsData = useSelector((s) => s.news_store.newsData);
 

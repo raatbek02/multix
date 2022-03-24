@@ -9,6 +9,9 @@
   z-index: 10;
   background-color: #fff;
 }
+.header__hiden {
+  display: none;
+}
 .header__container {
   max-width: 1440px;
   margin: 0 auto;
@@ -24,6 +27,8 @@
 }
 .header__title {
   color: #1b67ad;
+  cursor: pointer;
+  display: inline-block;
 }
 .header__right {
   width: 65%;
@@ -239,6 +244,10 @@
     flex-direction: column;
     border-bottom: 1px solid #3e3e3e;
     margin-bottom: 20px;
+  }
+  .header__menu ul li {
+    font-size: 24px;
+    margin-bottom: 30px;
   }
   .li_item {
     font-size: 24px;

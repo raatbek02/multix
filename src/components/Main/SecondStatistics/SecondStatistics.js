@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { $host } from "../../../http";
 import { Bounce } from "react-reveal";
 import bg from "../../../assets//images/main_images/secondStatistics_images/SS_bg.png";
 import ss_logo1 from "../../../assets//images/main_images/secondStatistics_images/ss_logo1.svg";
@@ -7,41 +8,40 @@ import ss_logo3 from "../../../assets//images/main_images/secondStatistics_image
 import ss_logo4 from "../../../assets//images/main_images/secondStatistics_images/ss_logo4.svg";
 
 import "./SecondStatistics.css";
+import { setSecondStatisticsData } from "../../../store/secondStatistics_store";
+import { useDispatch, useSelector } from "react-redux";
 
 function SecondStatistics() {
+  const dispatch = useDispatch();
+  const secondStatisticsData = useSelector(
+    (s) => s.secondStatistics_store.secondStatisticsData
+  );
+
+  const getData = async () => {
+    await $host.get(`en/api/information/`).then(({ data }) => {
+      dispatch(setSecondStatisticsData(data));
+    });
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <div className="secondStatistics">
       <div className="secondStatistics__container">
         <Bounce left cascade>
           <div className="secondStatistics__content">
-            <div className="secondStatistics__item">
-              <div className="secondStatistics__logo">
-                <img src={ss_logo1} alt="" />
-              </div>
-              <div className="secondStatistics__number">150</div>
-              <div className="secondStatistics__text">Projects</div>
-            </div>
-            <div className="secondStatistics__item">
-              <div className="secondStatistics__logo">
-                <img src={ss_logo2} alt="" />
-              </div>
-              <div className="secondStatistics__number">300</div>
-              <div className="secondStatistics__text">Reviews</div>
-            </div>{" "}
-            <div className="secondStatistics__item">
-              <div className="secondStatistics__logo">
-                <img src={ss_logo3} alt="" />
-              </div>
-              <div className="secondStatistics__number">250</div>
-              <div className="secondStatistics__text">CLients</div>
-            </div>{" "}
-            <div className="secondStatistics__item">
-              <div className="secondStatistics__logo">
-                <img src={ss_logo4} alt="" />
-              </div>
-              <div className="secondStatistics__number">120</div>
-              <div className="secondStatistics__text">Awards</div>
-            </div>
+            {secondStatisticsData &&
+              secondStatisticsData.map((el) => (
+                <div className="secondStatistics__item">
+                  <div className="secondStatistics__logo">
+                    <img src={el.image} alt="" />
+                  </div>
+                  <div className="secondStatistics__number">{el.title}</div>
+                  <div className="secondStatistics__text">{el.description}</div>
+                </div>
+              ))}
           </div>
         </Bounce>
       </div>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ReactPlayer from "react-player";
 import { Fade } from "react-reveal";
 import { $host } from "../../../http";
 
@@ -39,12 +40,23 @@ function VideoComponent() {
             {" "}
             <Fade right>
               <div className="videoComponent__right--item">
-                <video
+                {/* <video
                   src={videoData.file}
                   width={"100%"}
                   height={"100%"}
                   controls
-                ></video>
+                ></video> */}
+
+                <ReactPlayer
+                  width={"100%"}
+                  height={"100%"}
+                  url={videoData.file}
+                  controls
+                />
+                {/* {videoData.description} */}
+                {/* <p
+                  dangerouslySetInnerHTML={{ __html: videoData.description }}
+                ></p> */}
               </div>
             </Fade>
           </div>

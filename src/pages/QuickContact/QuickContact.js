@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { $host } from "../../http";
+import './QuickContact.css'
 
 function QuickContact() {
   const [backCallInput, setBackCallInput] = useState({

@@ -30,13 +30,13 @@
   margin-bottom: 34px;
 }
 .footer__form--item input,
-textarea {
+.footer__form--item textarea {
   border: 1px solid #c4c4c4;
   padding: 10px 20px;
   color: #c4c4c4;
 }
 .footer__form--item input::placeholder,
-textarea::placeholder {
+.footer__form--item textarea::placeholder {
   color: #c4c4c4;
 }
 .footer__form--item.semiInputs input {
@@ -60,6 +60,14 @@ textarea::placeholder {
   font-weight: 500;
   color: #fff;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.footer__form--subitBtn button:hover {
+  background-color: #a83f32;
+}
+.footer__form--subitBtn button:active {
+  background-color: #440e07;
 }
 
 /* -------------------------------------footer__middle---------------------------- */

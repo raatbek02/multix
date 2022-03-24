@@ -1,0 +1,72 @@
+/* .fileInput input {
+  display: none;
+} */
+
+.fileInput {
+  margin-top: 10px;
+  width: 90%;
+}
+.fileInput input {
+  display: none;
+}
+
+/* .fileInput input + label {
+  padding: 5px;
+  width: 200px;
+  height: 120px;
+  border-radius: 15px;
+  color: white;
+  border-radius: 9px;
+
+} */
+.fileInput label {
+  /* background-color: #8a8a8b; */
+  background-color: lightseagreen;
+  padding: 10px 30px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+
+  display: block;
+  width: 100%;
+
+  text-align: center;
+}
+.fileInput label:hover {
+  background-color: #032a61;
+}
+.imageUploader {
+  display: none;
+}
+
+.fileResults {
+  width: 90%;
+}
+
+.fileImages {
+  width: 100%;
+  height: 100px;
+  margin: 40px auto 0;
+}
+.fileImages img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.fileDelete {
+  width: 100%;
+  margin: 10px auto;
+}
+.fileDelete button {
+  width: 100%;
+  padding: 10px 0;
+  background-color: rgb(146, 0, 0);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.fileDelete button:hover {
+  background-color: rgb(44, 0, 0);
+}
