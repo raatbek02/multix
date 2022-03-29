@@ -1,7 +1,7 @@
 .admin {
   display: flex;
   background-color: #eee;
-  height: 100%;
+  /* height: 100vh; */
 }
 
 .admin__left {
@@ -11,12 +11,23 @@
 }
 .admin__right {
   width: 80%;
-  /* height: 100%; */
+  /* height: 100vh; */
+
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+  height: 100%;
+
+  position: relative;
 }
 .admin__content {
   padding: 0 30px;
 }
 
+.admin__right--bottom {
+  position: sticky;
+  top: 100vh;
+}
 /* ----------------------------------------------adminItem__content------------------------------------------ */
 
 .adminItem {
@@ -25,6 +36,7 @@
   box-shadow: 0px 10px 16px rgb(0 0 0 / 5%);
   color: darkslategrey;
   font-weight: 500;
+  border-radius: 20px;
 }
 .adminItem__content table {
   width: 100%;

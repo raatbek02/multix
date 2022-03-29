@@ -5,6 +5,7 @@
   color: darkslategrey;
   font-weight: 500;
   width: 100%;
+  border-radius: 20px;
 }
 .adminInfo table thead tr th {
   text-align: center;

@@ -5,6 +5,7 @@
   box-shadow: 0px 10px 16px rgb(0 0 0 / 5%);
   color: darkslategrey;
   font-weight: 500;
+  border-radius: 20px;
 }
 .adminAbout__header {
   margin-bottom: 20px;
@@ -18,7 +19,6 @@
 
 .adminAbout .adminTeam__header--btn button:first-child {
   margin-right: 15px;
-  
 }
 .adminAbout .adminTeam__header--btn button:last-child {
   background-color: darkred;

@@ -1,0 +1,48 @@
+.authContent {
+  background-image: url("../../../assets/images/header_images/login_bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 500px;
+  padding: 0 30px 20px;
+}
+.authContent__titles {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 32px;
+  color: darkgoldenrod;
+  font-weight: 700;
+  /* background-color: chartreuse; */
+}
+
+.authContent__content input {
+  background: transparent;
+  border: 2px solid chartreuse;
+  width: 100%;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 18px;
+}
+.authContent__content input::placeholder {
+  color: darkgoldenrod;
+  font-weight: 700;
+  font-size: 18px;
+}
+.authContent__button {
+  text-align: center;
+}
+.authContent__button button {
+  padding: 10px 50px;
+  background-color: rgb(158, 115, 6);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+
+  transition: all 0.3s ease-in-out;
+}
+.authContent__button button:hover {
+  background-color: rgb(126, 90, 0);
+}
+.authContent__button button:active {
+  background-color: rgb(233, 185, 62);
+}

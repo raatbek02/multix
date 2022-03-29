@@ -1,4 +1,6 @@
 import React from "react";
+import ProgressBar from "react-animated-progress-bar";
+
 import { Bounce, Slide } from "react-reveal";
 import Spin from "react-reveal/Spin";
 import statistics_dots from "../../../assets/images/main_images/statistics_images/statistics_dots.png";
@@ -15,31 +17,67 @@ function Statistics() {
               <div className="statistics__item">
                 <div className="statistics__item--top">
                   <div className="statistics__name">Business Management</div>
-                  <div className="statistics__name">95%</div>
+                  {/* <div className="statistics__name">95%</div> */}
                 </div>
-                <div className="statistics__item--bottom"></div>
+
+                <ProgressBar
+                  width="100%"
+                  height="10px"
+                  rect
+                  fontColor="#fff"
+                  percentage="90"
+                  rectPadding="1px"
+                  rectBorderRadius="20px"
+                  trackPathColor="transparent"
+                  bgColor="#da4500"
+                  trackBorderColor="grey"
+                />
+                {/* <div className="statistics__item--bottom"></div> */}
               </div>
               <div className="statistics__item">
                 <div className="statistics__item--top">
                   <div className="statistics__name">Financial Management</div>
-                  <div className="statistics__name">95%</div>
+                  {/* <div className="statistics__name">95%</div> */}
                 </div>
-                <div className="statistics__item--bottom"></div>
+                <ProgressBar
+                  width="100%"
+                  height="10px"
+                  rect
+                  fontColor="#fff"
+                  percentage="40"
+                  rectPadding="1px"
+                  rectBorderRadius="20px"
+                  trackPathColor="transparent"
+                  bgColor="#da4500"
+                  trackBorderColor="grey"
+                />
+                {/* <div className="statistics__item--bottom"></div> */}
               </div>{" "}
               <div className="statistics__item">
                 <div className="statistics__item--top">
                   <div className="statistics__name">Project Management</div>
-                  <div className="statistics__name">95%</div>
+                  {/* <div className="statistics__name">95%</div> */}
                 </div>
-                <div className="statistics__item--bottom"></div>
+
+                <ProgressBar
+                  width="100%"
+                  height="10px"
+                  rect
+                  fontColor="#fff"
+                  percentage="70"
+                  rectPadding="1px"
+                  rectBorderRadius="20px"
+                  trackPathColor="transparent"
+                  bgColor="#da4500"
+                  trackBorderColor="grey"
+                />
+                {/* <div className="statistics__item--bottom"></div> */}
               </div>
             </Bounce>
           </div>
           <div className="statistics__right">
             <div className="statistics__right--dots">
-              <Spin forever duration={5000}>
-                <img src={statistics_dots} alt="" />
-              </Spin>
+              <img src={statistics_dots} alt="" />
             </div>
           </div>
         </div>

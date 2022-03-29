@@ -3,11 +3,11 @@ import { $host } from "../../http";
 
 import { useDispatch } from "react-redux";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
-import email from "../../assets/images/header_images/email.svg";
-import phone from "../../assets/images/header_images/phone.svg";
 import { addSearchItems } from "../../store/search_store";
 import {
   ABOUT,
+  ADMIN,
+  ADMIN_TEAM,
   CONSULTANT,
   CONTACTPAGE,
   HOME_ROUTES,
@@ -16,17 +16,27 @@ import {
   SEARCH_ROUTE,
   TEAMPAGE,
 } from "../../utils/consts";
-
+import email from "../../assets/images/header_images/email.svg";
+import phone from "../../assets/images/header_images/phone.svg";
+import user_icon from "../../assets/images/header_images/user_icon.svg";
+import Modal from "../UI/Modal/Modal";
 import "./Header.css";
+import AuthContent from "../Auth/AuthContent/AuthContent";
+import { toast } from "react-toastify";
 
 function Header() {
   const [activeMobileMenu, setActiveMobileMenu] = useState(false);
   const [activeLink, setActiveLink] = useState(1);
   const [search, setSearch] = useState("");
+  const [showLogin, setShowLogin] = useState(false);
+  const [modalAuth, setModalAuth] = useState(false);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const location = useLocation();
+
+  const successLogout = () => toast.success("You have successfully logged out");
+
+  const token = localStorage.getItem("token");
 
   const menuList = [
     {
@@ -88,6 +98,24 @@ function Header() {
     });
   };
 
+  const logout = async () => {
+    const data = {
+      auth_token: token,
+    };
+    await $host
+      .post(`en/api/auth/token/logout/`, data, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Token " + token,
+        },
+      })
+      .then(({ data }) => {
+        localStorage.setItem("token", data);
+        successLogout();
+        setShowLogin(false);
+      });
+  };
+
   return (
     <header
       // className={location.pathname === "/admin" ? "header__hiden" : "header"}
@@ -110,10 +138,49 @@ function Header() {
                 <img src={phone} alt="" />
                 <span>+996 555 555 555</span>
               </div>
-              {/* <div className="header__right--top--item">
-                <span>En</span>
-                <img src={right_arrow} alt="" />
-              </div> */}
+              <div className="header__right--top--item">
+                <div
+                  onClick={() => {
+                    setShowLogin(!showLogin);
+                  }}
+                  className="header__login"
+                >
+                  <img src={user_icon} alt="" />
+                </div>
+              </div>
+
+              {showLogin && (
+                <div className="header__x">
+                  <div className="header__xy">
+                    <ul>
+                      {token ? (
+                        <>
+                          <li
+                            onClick={() => navigate(`/${ADMIN}/${ADMIN_TEAM}`)}
+                          >
+                            Admin
+                          </li>
+                          <li
+                            onClick={() => {
+                              logout();
+                            }}
+                          >
+                            Logout
+                          </li>
+                        </>
+                      ) : (
+                        <li
+                          onClick={() => {
+                            setModalAuth(true);
+                          }}
+                        >
+                          Login
+                        </li>
+                      )}
+                    </ul>
+                  </div>
+                </div>
+              )}
             </div>
             <div className="header__right--bottom">
               <div className="header__menu">
@@ -213,6 +280,10 @@ function Header() {
           </div>
         </div>
       </div>
+
+      <Modal active={modalAuth} setActive={setModalAuth}>
+        <AuthContent setModalAuth={setModalAuth} setShowLogin={setShowLogin} />
+      </Modal>
     </header>
   );
 }

@@ -14,13 +14,17 @@ function Admin() {
         <AdminSidebar />
       </div>
       <div className="admin__right">
-        <AdminHeader />
-        <AdminPathName />
-        <AdminStatistic />
+        <div className="admin__right--top">
+          <AdminHeader />
+          <AdminPathName />
+          <AdminStatistic />
+        </div>
 
         <div className="admin__content">
           <Outlet />
         </div>
+
+        <div className="admin__right--bottom"></div>
       </div>
     </div>
   );

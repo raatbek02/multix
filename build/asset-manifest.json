@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.84f233df.css",
-    "main.js": "/static/js/main.7f4abb12.js",
+    "main.css": "/static/css/main.45e05b8e.css",
+    "main.js": "/static/js/main.0da35eb9.js",
     "static/js/787.26852b92.chunk.js": "/static/js/787.26852b92.chunk.js",
     "static/media/banner_bg.png": "/static/media/banner_bg.d00a2a0d5a558e7f3db4.png",
     "static/media/contactPage_map.png": "/static/media/contactPage_map.f6fc2325c196b0e6e403.png",
@@ -19,6 +19,7 @@
     "static/media/CeraPro-Medium.woff2": "/static/media/CeraPro-Medium.bee342d43931fe20a732.woff2",
     "static/media/CeraPro-Bold.woff2": "/static/media/CeraPro-Bold.626d8076e7db713266dd.woff2",
     "static/media/CeraPro-Black.woff2": "/static/media/CeraPro-Black.b1fee49aba3ab75f15c9.woff2",
+    "static/media/login_bg.png": "/static/media/login_bg.40b9f41baad6ee0781db.png",
     "static/media/teamD_contact3.svg": "/static/media/teamD_contact3.8a3759f68d98fbc5fdfd9fe8e279b24a.svg",
     "static/media/email.svg": "/static/media/email.ff2af692b0be4f6f33da7e20cc596ec3.svg",
     "static/media/teamD_contact1.svg": "/static/media/teamD_contact1.b2e28c005246446f0f740fc15153cbd9.svg",
@@ -41,13 +42,14 @@
     "static/media/consultant_sidebar.svg": "/static/media/consultant_sidebar.9edde820befff13e3a85b4fa6ea939ea.svg",
     "static/media/info_sidebar.svg": "/static/media/info_sidebar.f0c2006f0435c4f985044855814c1611.svg",
     "static/media/user_adminHeader.svg": "/static/media/user_adminHeader.b5a93b75482006a021e0945870345ea5.svg",
+    "static/media/user_icon.svg": "/static/media/user_icon.b5a93b75482006a021e0945870345ea5.svg",
     "static/media/ss_logo2.svg": "/static/media/ss_logo2.d4efa8f2e1b8b40bf92b3f6d4c3013c7.svg",
-    "main.84f233df.css.map": "/static/css/main.84f233df.css.map",
-    "main.7f4abb12.js.map": "/static/js/main.7f4abb12.js.map",
+    "main.45e05b8e.css.map": "/static/css/main.45e05b8e.css.map",
+    "main.0da35eb9.js.map": "/static/js/main.0da35eb9.js.map",
     "787.26852b92.chunk.js.map": "/static/js/787.26852b92.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.84f233df.css",
-    "static/js/main.7f4abb12.js"
+    "static/css/main.45e05b8e.css",
+    "static/js/main.0da35eb9.js"
   ]
 }
